@@ -4,6 +4,7 @@
  */
 package com.ejemplo.SpringBoot.Controller;
 
+import com.ejemplo.SpringBoot.model.Formacion;
 import com.ejemplo.SpringBoot.model.Persona;
 import com.ejemplo.SpringBoot.service.IPersonaService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 //cambiar la url para produccion 
@@ -40,11 +42,23 @@ public class Controller {
     public List<Persona> verPersonas (){
         return persoServ.verPersonas();
     }
+    
     @CrossOrigin(origins ="https://portafront.web.app")
     @DeleteMapping ("/delete/{id}")
     public void borrarPersona (@PathVariable Long id){
         persoServ.borrarPersona(id);
-        
     }
+   
+    
+    @CrossOrigin(origins ="https://portafront.web.app")
+    @PutMapping ("/updatefor/{id}")
+    public void updateFormacion (@PathVariable Long id , @RequestBody Persona exp){
+     
+      Persona mypersona = persoServ.buscarPersona(id);
+      
+      persoServ.crearPersona(mypersona);
+
+    }
+
    
 }
