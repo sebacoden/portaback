@@ -51,7 +51,7 @@ public class Controller {
    
     
     @CrossOrigin(origins ="https://portafront.web.app")
-    @PutMapping ("/updatefor/{id}")
+    @PutMapping ("/update-persona/{id}")
     public void updateFormacion (@PathVariable Long id , @RequestBody Persona exp){
      
       Persona mypersona = persoServ.buscarPersona(id);
