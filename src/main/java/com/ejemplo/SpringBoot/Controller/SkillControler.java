@@ -14,29 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-
-import com.ejemplo.SpringBoot.model.Perfil;
-import com.ejemplo.SpringBoot.service.IPerfilService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 //cambiar la url para produccion 
 
 @RestController
@@ -56,22 +40,18 @@ public class SkillControler {
     @ResponseBody
     public List<Skill> verSkills (){
         return skillServ.verSkill();
-    }
-    
+    } 
     @CrossOrigin(origins ="https://portafront.web.app")
     @DeleteMapping ("/delete-skill/{id}")
     public void borrarSkill (@PathVariable Long id){
         skillServ.borrarSkill(id);
     }
-   
-    
     @CrossOrigin(origins ="https://portafront.web.app")
     @PutMapping ("/update-skill/{id}")
     public void updateSkill (@PathVariable Long id , @RequestBody Skill ski){
      
      Skill mypersona = skillServ.buscarSkill(id);
      skillServ.crearSkill(mypersona);
-
     }
 
    
