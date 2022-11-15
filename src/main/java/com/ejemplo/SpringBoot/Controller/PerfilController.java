@@ -38,7 +38,6 @@ public class PerfilController {
     @PostMapping ("/new/perfil")
     public void agregarPerfil (@RequestBody Perfil perf){
         perfilServ.crearPerfil(perf);
-        
     }    
     @CrossOrigin(origins ="https://portafront.web.app")
     @GetMapping ("/ver/perfil")

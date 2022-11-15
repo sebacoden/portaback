@@ -34,8 +34,6 @@ public class SkillControler {
     public void agregarSkill (@RequestBody Skill ski){
         SkillServ.crearSkill(ski);  
     }    
-     
-    
     @CrossOrigin(origins ="https://portafront.web.app")
     @GetMapping ("/ver/skill")
     @ResponseBody
