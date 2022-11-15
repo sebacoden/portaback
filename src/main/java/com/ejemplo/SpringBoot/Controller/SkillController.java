@@ -9,9 +9,7 @@ import com.ejemplo.SpringBoot.model.Skill;
 import com.ejemplo.SpringBoot.service.ISkillService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,11 +19,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 //cambiar la url para produccion 
 
 @RestController
 @CrossOrigin(origins ="https://portafront.web.app")
-public class SkillControler {
+public class SkillController {
     
     @Autowired
     private ISkillService skillServ;
@@ -46,6 +57,7 @@ public class SkillControler {
     public void borrarSkill (@PathVariable Long id){
         skillServ.borrarSkill(id);
     }
+    
     @CrossOrigin(origins ="https://portafront.web.app")
     @PutMapping ("/update-skill/{id}")
     public void updateSkill (@PathVariable Long id , @RequestBody Skill ski){
