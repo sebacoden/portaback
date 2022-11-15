@@ -5,7 +5,6 @@
 package com.ejemplo.SpringBoot.Controller;
 //package com.ejemplo.SpringBoot.PerfilController;
 
-import com.ejemplo.SpringBoot.model.Formacion;
 import com.ejemplo.SpringBoot.model.Perfil;
 import com.ejemplo.SpringBoot.service.IPerfilService;
 import org.springframework.web.bind.annotation.GetMapping;

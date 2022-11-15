@@ -27,24 +27,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class SkillControler {
     
     @Autowired
-    private ISkillService SkillServ;
+    private ISkillService skillServ;
     
     @CrossOrigin(origins ="https://portafront.web.app")
     @PostMapping ("/new/skill")
     public void agregarSkill (@RequestBody Skill ski){
-        SkillServ.crearSkill(ski);  
+        skillServ.crearSkill(ski);  
     }    
     @CrossOrigin(origins ="https://portafront.web.app")
     @GetMapping ("/ver/skill")
     @ResponseBody
     public List<Skill> verSkills (){
-        return SkillServ.verSkill();
+        return skillServ.verSkill();
     }
     
     @CrossOrigin(origins ="https://portafront.web.app")
     @DeleteMapping ("/delete-skill/{id}")
     public void borrarSkill (@PathVariable Long id){
-        SkillServ.borrarSkill(id);
+        skillServ.borrarSkill(id);
     }
    
     
@@ -52,9 +52,9 @@ public class SkillControler {
     @PutMapping ("/update-skill/{id}")
     public void updateSkill (@PathVariable Long id , @RequestBody Skill ski){
      
-      Skill mypersona = SkillServ.buscarSkill(id);
+      Skill mypersona = skillServ.buscarSkill(id);
       
-     SkillServ.crearSkill(mypersona);
+     skillServ.crearSkill(mypersona);
 
     }
 
