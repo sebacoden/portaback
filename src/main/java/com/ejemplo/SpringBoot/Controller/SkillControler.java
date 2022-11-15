@@ -20,6 +20,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+
+import com.ejemplo.SpringBoot.model.Perfil;
+import com.ejemplo.SpringBoot.service.IPerfilService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 //cambiar la url para produccion 
 
 @RestController
@@ -29,12 +46,12 @@ public class SkillControler {
     @Autowired
     private ISkillService skillServ;
     
-    @CrossOrigin(origins ="https://portafront.web.app")
+    @CrossOrigin(origins = "https://portafront.web.app")
     @PostMapping ("/new/skill")
     public void agregarSkill (@RequestBody Skill ski){
         skillServ.crearSkill(ski);  
     }    
-    @CrossOrigin(origins ="https://portafront.web.app")
+    @CrossOrigin(origins = "https://portafront.web.app")
     @GetMapping ("/ver/skill")
     @ResponseBody
     public List<Skill> verSkills (){
