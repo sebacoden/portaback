@@ -21,17 +21,17 @@ public class Proyecto {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    private String desc;
-    private String año;
+    private String descripcion;
+    private String fecha;
    
      public Proyecto(){
         
     }
     
-    public Proyecto(Long id,String desc,String año){
+    public Proyecto(Long id,String descripcion,String fecha){
         this.id =id;
-        this.desc = desc;
-        this.año = año;
+        this.descripcion = descripcion;
+        this.fecha = fecha;
                
     }
 }
