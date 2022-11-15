@@ -36,7 +36,7 @@ public class SkillControler {
         skillServ.crearSkill(ski);  
     }    
     @CrossOrigin(origins = "https://portafront.web.app")
-    @GetMapping ("/ver/*habilidad*/")
+    @GetMapping ("/ver/habilidad")
     @ResponseBody
     public List<Skill> verSkills (){
         return skillServ.verSkill();
