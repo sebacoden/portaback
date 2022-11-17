@@ -64,5 +64,6 @@ public class Controller {
          Persona myfor=persoServ.buscarPersona(id);
          return myfor;
     }
-   
+    
+       
 }

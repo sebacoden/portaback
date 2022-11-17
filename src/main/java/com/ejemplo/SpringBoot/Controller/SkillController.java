@@ -54,6 +54,12 @@ public class SkillController {
      myskill = ski;
       skillServ.crearSkill(myskill);
     }
-
+    
+    @CrossOrigin(origins ="https://portafront.web.app")
+    @GetMapping ("/get-skill/{id}")
+    public Skill getSkill (@PathVariable Long id){
+         Skill myfor=skillServ.buscarSkill(id);
+         return myfor;
+    }
    
 }
