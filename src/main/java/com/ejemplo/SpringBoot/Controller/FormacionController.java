@@ -46,6 +46,7 @@ public class FormacionController {
     public List<Formacion> verFormacion (){
         return FormServ.verFormacion();
     }
+    
     @CrossOrigin(origins ="https://portafront.web.app")
     @DeleteMapping ("/delete-formacion/{id}")
     public void borrarFormacion (@PathVariable Long id){
@@ -60,8 +61,13 @@ public class FormacionController {
       myformacion = exp;
       FormServ.crearFormacion(myformacion);
     }
-
-   
+    
+    @CrossOrigin(origins ="https://portafront.web.app")
+    @GetMapping ("/get-formacion/{id}")
+    public Formacion getFormacion (@PathVariable Long id){
+         Formacion myfor=FormServ.buscarFormacion(id);
+         return myfor;
+    }
 }
 
 

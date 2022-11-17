@@ -41,7 +41,6 @@ public class FormacionService implements IFormacionService {
     @Override
     public Formacion buscarFormacion(Long id) {
         return FormacionRepo.findById(id).orElse(null);
-       
     }
     
     
