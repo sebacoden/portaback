@@ -53,7 +53,7 @@ public class FormacionController {
         
     }
     @CrossOrigin(origins ="https://portafront.web.app")
-    @PutMapping ("/updatefor/{id}")
+    @PostMapping ("/updatefor/{id}")
     public void updateFormacion (@PathVariable Long id , @RequestBody Formacion exp){
      
       Formacion myformacion = FormServ.buscarFormacion(id);
