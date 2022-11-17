@@ -58,7 +58,6 @@ public class FormacionController {
      
       //Formacion myformacion = FormServ.buscarFormacion(id);
       FormServ.borrarFormacion(id);
-      FormServ.crearFormacion(exp);
 
     }
 
