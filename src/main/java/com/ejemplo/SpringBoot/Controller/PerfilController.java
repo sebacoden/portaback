@@ -52,8 +52,15 @@ public class PerfilController {
     @CrossOrigin(origins ="https://portafront.web.app")
     @PostMapping ("/updateper/{id}")
     public void updatePerfil (@PathVariable Long id , @RequestBody Perfil perf){
-      //Perfil myperfil = perfilServ.buscarPerfil(id);
-      perfilServ.crearPerfil(perf);
+      Perfil myperfil = perfilServ.buscarPerfil(id);
+      myperfil = perf;
+      perfilServ.crearPerfil(myperfil);
 
+    }
+    @CrossOrigin(origins ="https://portafront.web.app")
+    @GetMapping ("/get-perfil/{id}")
+    public Perfil getFormacion (@PathVariable Long id){
+         Perfil myfor=perfilServ.buscarPerfil(id);
+         return myfor;
     }
 }

@@ -50,9 +50,9 @@ public class SkillController {
     @CrossOrigin(origins ="https://portafront.web.app")
     @PutMapping ("/update-skill/{id}")
     public void updateSkill (@PathVariable Long id , @RequestBody Skill ski){
-     
-     Skill mypersona = skillServ.buscarSkill(id);
-     skillServ.crearSkill(mypersona);
+     Skill myskill = skillServ.buscarSkill(id);
+     myskill = ski;
+      skillServ.crearSkill(myskill);
     }
 
    

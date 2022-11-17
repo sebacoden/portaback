@@ -52,9 +52,14 @@ public class ExperienciaController {
     public void updateExperiencia (@PathVariable Long id , @RequestBody Experiencia exp){
      
       Experiencia myexperiencia = ExperienciaServ.buscarExperiencia(id);
-      
+      myexperiencia = exp;
       ExperienciaServ.crearExperiencia(myexperiencia);
-
     }
-
+    
+    @CrossOrigin(origins ="https://portafront.web.app")
+    @GetMapping ("/get-experiencia/{id}")
+    public Experiencia getExperiencia (@PathVariable Long id){
+        Experiencia myfor=ExperienciaServ.buscarExperiencia(id);
+        return myfor;
+    }
 }

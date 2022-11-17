@@ -53,12 +53,16 @@ public class Controller {
     @CrossOrigin(origins ="https://portafront.web.app")
     @PutMapping ("/update-persona/{id}")
     public void updateFormacion (@PathVariable Long id , @RequestBody Persona exp){
-     
       Persona mypersona = persoServ.buscarPersona(id);
-      
+      mypersona = exp;
       persoServ.crearPersona(mypersona);
 
     }
-
+    @CrossOrigin(origins ="https://portafront.web.app")
+    @GetMapping ("/get-persona/{id}")
+    public Persona getFormacion (@PathVariable Long id){
+         Persona myfor=persoServ.buscarPersona(id);
+         return myfor;
+    }
    
 }

@@ -57,7 +57,16 @@ public class ProyectoController {
     @PutMapping ("/update-proyecto/{id}")
     public void updateProyecto (@PathVariable Long id , @RequestBody Proyecto proyec){
       Proyecto myperfil = proyecServ.buscarProyecto(id);
+      myperfil = proyec;
       proyecServ.crearProyecto(myperfil);
-
     }
+
+    @CrossOrigin(origins ="https://portafront.web.app")
+    @GetMapping ("/get-proyecto/{id}")
+    public Proyecto getProyecto (@PathVariable Long id){
+         Proyecto myfor = proyecServ.buscarProyecto(id);
+         return myfor;
+    }
+
+
 }
