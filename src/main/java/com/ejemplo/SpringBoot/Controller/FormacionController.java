@@ -56,8 +56,8 @@ public class FormacionController {
     @PutMapping ("/updatefor/{id}")
     public void updateFormacion (@PathVariable Long id , @RequestBody Formacion exp){
      
-      //Formacion myformacion = FormServ.buscarFormacion(id);
-      FormServ.borrarFormacion(id);
+      Formacion myformacion = FormServ.buscarFormacion(id);
+      FormServ.crearFormacion(myformacion);
 
     }
 
