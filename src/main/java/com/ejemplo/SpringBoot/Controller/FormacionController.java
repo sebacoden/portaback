@@ -57,7 +57,7 @@ public class FormacionController {
     public void updateFormacion (@PathVariable Long id , @RequestBody Formacion exp){
      
       Formacion myformacion = FormServ.buscarFormacion(id);
-      
+      FormServ.borrarFormacion(id);
       FormServ.crearFormacion(myformacion);
 
     }
