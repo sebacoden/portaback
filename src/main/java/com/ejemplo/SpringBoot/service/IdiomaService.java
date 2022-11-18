@@ -27,8 +27,8 @@ public class IdiomaService implements IIdiomaService{
     }
 
     @Override
-    public void crearIdioma(Idioma fer) {
-        FormacionRepo.save(fer);
+    public void crearIdioma(Idioma idiom) {
+        FormacionRepo.save(idiom);
     }
 
     @Override

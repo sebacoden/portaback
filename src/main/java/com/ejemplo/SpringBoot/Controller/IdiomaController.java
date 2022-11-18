@@ -5,7 +5,6 @@
 package com.ejemplo.SpringBoot.Controller;
 
 import com.ejemplo.SpringBoot.model.Idioma;
-import com.ejemplo.SpringBoot.model.Perfil;
 import com.ejemplo.SpringBoot.service.IIdiomaService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,8 +29,8 @@ public class IdiomaController {
     
     @CrossOrigin(origins ="https://portafront.web.app")
     @PostMapping ("/new/idioma")
-    public void agregarIdioma (@RequestBody Idioma perf){
-        perfilServ.crearIdioma(perf);
+    public void agregarIdioma (@RequestBody Idioma idiom){
+        perfilServ.crearIdioma(idiom);
     }    
     @CrossOrigin(origins ="https://portafront.web.app")
     @GetMapping ("/ver/idioma")
