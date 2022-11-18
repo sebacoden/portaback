@@ -8,6 +8,7 @@ package com.ejemplo.SpringBoot.model;
  *
  * @author W10-01
  */
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,11 @@ public class Proyecto {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
+            
+    
     private String descripcion;
+    
+    @Column(length = 1300)
     private String fecha;
    
      public Proyecto(){
