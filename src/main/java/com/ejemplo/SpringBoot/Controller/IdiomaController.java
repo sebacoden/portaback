@@ -23,6 +23,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
  *
  * @author W10-01
  */
+
+
+@RestController
+@CrossOrigin(origins ="https://portafront.web.app")
 public class IdiomaController {
     @Autowired
     private IIdiomaService perfilServ;
