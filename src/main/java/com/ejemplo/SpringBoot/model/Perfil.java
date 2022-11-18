@@ -23,14 +23,11 @@ public class Perfil{
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-
-    private String idioma;
     
     @Column(length = 1300)    
     private String perfil;
     
-    @Column(length = 1300)
-    private String objetivos;
+
     
     
     
@@ -38,11 +35,9 @@ public class Perfil{
         
     }
     
-    public Perfil(Long id,String idioma,String perfil,String objetivos){
+    public Perfil(Long id,String perfil){
         this.id =id;
-        this.idioma = idioma;
         this.perfil = perfil;
-        this.objetivos = objetivos;
         
     }
     

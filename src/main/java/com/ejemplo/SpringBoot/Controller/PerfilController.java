@@ -50,7 +50,7 @@ public class PerfilController {
         perfilServ.borrarPerfil(id);        
     }
     @CrossOrigin(origins ="https://portafront.web.app")
-    @PostMapping ("/updateper/{id}")
+    @PutMapping ("/updateper/{id}")
     public void updatePerfil (@PathVariable Long id , @RequestBody Perfil perf){
       Perfil myperfil = perfilServ.buscarPerfil(id);
       myperfil = perf;
